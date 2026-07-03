@@ -19,9 +19,9 @@ Como rodar localmente
 bash# Instale as dependências
 npm install
 
-# Crie o arquivo de variáveis de ambiente
+-Crie o arquivo de variáveis de ambiente
 cp .env.example .env
-# Preencha os dados do banco MySQL no .env
+-Preencha os dados do banco MySQL no .env
 
-# Inicie em modo desenvolvimento
+-Inicie em modo desenvolvimento
 npm run develop
