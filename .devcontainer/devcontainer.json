@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "bein-backend-strapi-cms",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerComposeFile": "../docker/docker-compose-dev.yml",
+  "service": "cms",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ow.vscode-subword-navigation",
+        "shd101wyy.markdown-preview-enhanced",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "tyriar.sort-lines",
+        "johnpapa.vscode-peacock",
+        "mhutchie.git-graph",
+        "Serhioromano.vscode-gitflow"
+      ]
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "node",
+  "mounts": [
+    // "source=/local/source/path/goes/here,target=/target/path/in/container/goes/here,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/.config,target=/home/node/.config,type=bind,consistency=cached"
+    // "source=${localWorkspaceFolder}/.packages,target=${containerWorkspaceFolder}/.packages,type=bind,consistency=cached"
+    // "source=${localWorkspaceFolder}/.packages/amazon-sp-api,target=${containerWorkspaceFolder}/.packages/amazon-sp-api,type=bind,consistency=cached"
+  ],
+  // create a blank .clasprc.json file if one doesn't already exist
+  "initializeCommand": "bash ./.devcontainer/initializeCommand.sh",
+  "shutdownAction": "stopCompose"
+}

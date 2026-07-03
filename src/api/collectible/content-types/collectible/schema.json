@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collectibles",
+  "info": {
+    "singularName": "collectible",
+    "pluralName": "collectibles",
+    "displayName": "Carimbos Digitais",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notes": {
+      "type": "text"
+    },
+    "artifact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::artifact.artifact"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shares",
+  "info": {
+    "singularName": "share",
+    "pluralName": "shares",
+    "displayName": "Compartilhamentos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "artifact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::artifact.artifact"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "network": {
+      "type": "enumeration",
+      "enum": [
+        "FACEBOOK",
+        "TWITTER",
+        "INSTAGRAM",
+        "TIK TOK"
+      ],
+      "required": false
+    }
+  }
+}

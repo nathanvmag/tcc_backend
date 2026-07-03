@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resgate_recompensas",
+  "info": {
+    "singularName": "resgate-recompensa",
+    "pluralName": "resgate-recompensas",
+    "displayName": "Resgate Recompensas"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "recompensa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reward.reward"
+    },
+    "used": {
+      "type": "boolean",
+      "default": false
+    },
+    "used_at": {
+      "type": "datetime"
+    }
+  }
+}

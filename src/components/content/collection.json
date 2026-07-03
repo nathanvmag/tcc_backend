@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_content_collections",
+  "info": {
+    "displayName": "Coleção",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "artifacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::artifact.artifact"
+    }
+  }
+}

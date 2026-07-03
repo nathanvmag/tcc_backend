@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_seasons",
+  "info": {
+    "displayName": "Roteiro",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "collections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.collection"
+    }
+  }
+}
